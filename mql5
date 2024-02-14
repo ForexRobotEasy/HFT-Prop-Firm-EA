@@ -1,0 +1,87 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                        HFT Prop Firm EA         |
+//|                                        Developer: Forex Robot Easy Team   |
+//|                                        Website: forexroboteasy.com         |
+//+------------------------------------------------------------------+
+
+// Global variables
+int challengeTarget = 1000; // Challenge target
+bool isChallengeComplete = false; // Flag to indicate if challenge target is achieved
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                  PLACE YOUR CODE HERE                             |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+// Detect market movements and identify large market movements efficiently
+void DetectMarketMovements()
+{
+    // Place your code here for detecting market movements
+}
+
+// Stop-loss mechanism to protect equity during market movements
+void StopLossMechanism()
+{
+    // Place your code here for stop-loss mechanism
+}
+
+// Pass prop firm HFT challenges in less than an hour
+bool PassHFTChallenge()
+{
+    // Place your code here to pass prop firm HFT challenges
+    return true; // Return true if challenge is passed within an hour, false otherwise
+}
+
+// Integrated equity protector to stop the EA once the challenge target is achieved
+void EquityProtector()
+{
+    if(AccountEquity() >= challengeTarget)
+    {
+        isChallengeComplete = true; // Set flag to indicate challenge target is achieved
+        ExpertRemove(); // Stop the EA
+    }
+}
+
+// Robust gain-based money management strategy
+void MoneyManagementStrategy()
+{
+    // Place your code here for gain-based money management strategy
+}
+
+// Pro Ratio Money Management (PRM) feature
+void PRMMoneyManagement()
+{
+    // Place your code here for PRM feature
+}
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//|                  MAIN PROGRAM                                     |
+//|                                                                  |
+//|                                                                  |
+//|                                                                  |
+//+------------------------------------------------------------------+
+
+void OnTick()
+{
+    // Main logic of the EA
+    DetectMarketMovements();
+    StopLossMechanism();
+    if(!isChallengeComplete)
+    {
+        if(PassHFTChallenge())
+        {
+            EquityProtector();
+            MoneyManagementStrategy();
+            PRMMoneyManagement();
+        }
+    }
+}
